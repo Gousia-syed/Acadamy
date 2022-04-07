@@ -1,7 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.1.0
--- https://www.phpmyadmin.net/
---
 -- Host: 127.0.0.1:3307
 -- Generation Time: Jun 04, 2021 at 09:32 AM
 -- Server version: 10.4.18-MariaDB
@@ -40,9 +36,12 @@ CREATE TABLE `classes` (
 --
 
 INSERT INTO `classes` (`id`, `section`, `teacher`, `subject`, `time`) VALUES
-(1, 1, 1, 1, '9:00'),
-(2, 3, 2, 2, '11:30');
+(1, 1, 1, 1, '8:45'),
+(2, 2, 2, 2, '9:45'),
+(1, 2, 3, 1, '10:45');
 
+drop table classes;
+select * from classes;
 -- --------------------------------------------------------
 
 --
@@ -56,19 +55,20 @@ CREATE TABLE `students` (
   `age` int(11) DEFAULT NULL,
   `class` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+select * from teachers;
 
 --
 -- Dumping data for table `students`
 --
 
 INSERT INTO `students` (`id`, `fname`, `lname`, `age`, `class`) VALUES
-(1, 'Ali', 'Ahsan', 21, 1),
-(2, 'Hassan', 'Ahmed', 23, 2),
-(4, 'Gazi', 'Dani', 21, 1),
-(5, 'Tony', 'Fadel', 18, 2),
-(6, 'Lami', 'Saro', 24, 1),
-(7, 'Yazen', 'Rawn', 24, 2);
-
+(1, 'Ava', 'Amelia', 21, 1),
+(2, 'Emily', 'Luna', 23, 2),
+(4, 'Evelyn', 'jack', 21, 3),
+(5, 'Tony', 'Edwar', 18, 2),
+(6, 'Isabella', 'Saro', 24, 4),
+(7, 'Alica', 'Maya', 24, 2);
+drop table students;
 -- --------------------------------------------------------
 
 --
@@ -87,7 +87,11 @@ CREATE TABLE `subjects` (
 
 INSERT INTO `subjects` (`id`, `name`, `shortcut`) VALUES
 (1, 'English', 'ENG'),
-(2, 'Mathematics', 'MATH');
+(2, 'Bussiness', 'Bus'),
+(3, 'Electronics', 'Elec'),
+(4, 'Communactions', 'Com');
+drop table subjects;
+
 
 -- --------------------------------------------------------
 
@@ -107,8 +111,11 @@ CREATE TABLE `teachers` (
 --
 
 INSERT INTO `teachers` (`id`, `fname`, `lname`, `age`) VALUES
-(1, 'Sami', 'Rashed', '55'),
-(2, 'Rami', 'Sari', '66');
+(1, 'Mani', 'Bhavany', '45'),
+(2, 'suma', 'Sai', '32'),
+(3, 'john', 'tata', '36'),
+(4, 'Hemanth', 'Kummar', '30');
+drop table teachers;
 
 --
 -- Indexes for dumped tables
